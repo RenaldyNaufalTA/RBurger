@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RBURGER - Elegant Burger Builder</title>
+    <link href="https://fonts.cdnfonts.com/css/g-good-food" rel="stylesheet">
+    <link rel="icon" type="image/png" href="img/logo.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main>
+        <header>
+            <h1>RBURGER</h1>
+            <p style="margin-top: -20px; font-weight: 800; font-size: large;">Elegant Burger Builder</p>
+            <p>Create your own style burger!</p>
+        </header>
+
+        <div class="container">
+            <div class="block">
+                <button class="btn-reset" onclick="resetBurger()">RESET</button>
+                <div class="block-header">RETURN</div>
+                <div class="drop-zone" ondrop="dropToDelete(event)" ondragover="allowDrop(event)">
+                    DRAG HERE TO RETURN INGREDIENTS
+                </div>
+            </div>
+
+
+            <div class="block">
+                <div class="block-header">ORDER</div>
+                <p style="text-align: center; font-weight: bold; color: #555; margin: 10px 0;">Assemble Your Gourmet
+                    Burger
+                    Below</p>
+                <div id="burger-area" ondrop="dropToStack(event)" ondragover="allowDrop(event)"></div>
+                <button class="btn-order" onclick="submitOrder()">ORDER</button>
+            </div>
+
+            <div class="block">
+                <div class="block-header">INGREDIENTS</div>
+                <div class="slide-container">
+                    <button class="nav-btn" onclick="changeSlide(-1)">❮</button>
+                    <div id="current-ing" draggable="true" ondragstart="dragNew(event)"></div>
+                    <button class="nav-btn" onclick="changeSlide(1)">❯</button>
+                </div>
+            </div>
+
+            <div class="block">
+                <div class="block-header">DETAIL ORDER</div>
+                <div id="detail-view"></div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        Made with ❤️ by <a href="https://github.com/RenaldyNaufalTA" target="_blank">Renaldy</a>
+    </footer>
+
+    <script src="item.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

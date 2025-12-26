@@ -1,0 +1,341 @@
+/* Shared Styles for Burger Mania */
+* {
+    font-family: 'g Good Food', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'g Good Food', sans-serif;
+    margin: 0;
+    background: linear-gradient(135deg, #ecf0f1 0%, #bdc3c7 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+header {
+    background: linear-gradient(to right, #2c3e50, #34495e);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.block {
+    border: 2px solid #3498db;
+    min-width: 300px;
+    min-height: 250px;
+    position: relative;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    flex: 1;
+}
+
+.block-header {
+    background: linear-gradient(to right, #3498db, #2980b9);
+    color: white;
+    text-align: center;
+    margin: -10px -10px 10px -10px;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 15px 15px 0 0;
+}
+
+/* Specific for index.html */
+.slide-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    margin-top: -20px;
+}
+
+.nav-btn {
+    cursor: pointer;
+    font-size: 24px;
+    color: #3498db;
+    border: none;
+    background: none;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.ing-display {
+    text-align: center;
+    cursor: grab;
+}
+
+.visual-item {
+    width: 170px;
+    height: 80px;
+    border-radius: 10px;
+    margin: 10px auto;
+    border: 1px solid #ccc;
+}
+
+/* Burger Stack */
+#burger-area {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    min-height: 200px;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+}
+
+.layer {
+    width: 160px;
+    height: 25px;
+    border-radius: 5px;
+    margin: 0;
+    text-align: center;
+    color: white;
+    font-size: 12px;
+    line-height: 25px;
+    cursor: move;
+}
+
+.fixed {
+    cursor: not-allowed;
+}
+
+/* Order Detail */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+td {
+    border-bottom: 1px solid #eee;
+    padding: 5px;
+}
+
+.total-row {
+    font-weight: bold;
+    border-top: 2px solid #333;
+}
+
+.btn-reset {
+    float: right;
+    background: linear-gradient(to right, #3498db, #2980b9);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn-order {
+    width: 100%;
+    background: linear-gradient(to right, #3498db, #2980b9);
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: 'g Good Food', sans-serif;
+    font-size: 18px;
+    text-align: center;
+}
+
+.drop-zone {
+    border: 2px dashed #ccc;
+    height: 90%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #999;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+/* Specific for order.html */
+.burger-display {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    min-height: 200px;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+}
+
+.btn-back {
+    background: linear-gradient(to right, #3498db, #2980b9);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.order-container {
+    max-width: 1200px;
+}
+
+.order-block {
+    width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    header p {
+        font-size: 14px;
+    }
+
+    footer {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .container {
+        padding: 10px;
+        gap: 10px;
+        margin: 0 15px;
+
+    }
+
+    .order-container {
+        flex-direction: column;
+
+    }
+
+    .block {
+        min-width: 100%;
+        padding: 8px;
+    }
+
+    .drop-zone {
+        height: 80%;
+    }
+
+    .block-header {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .slide-container {
+        height: 100%;
+    }
+
+    .visual-item {
+        width: 120px;
+        height: 55px;
+    }
+
+    #burger-area,
+    .burger-display {
+        padding: 15px;
+        min-height: 150px;
+    }
+
+    .layer {
+        width: 140px;
+        height: 22px;
+        font-size: 11px;
+        line-height: 22px;
+    }
+
+    .nav-btn {
+        font-size: 20px;
+    }
+
+    .btn-reset,
+    .btn-order,
+    .btn-back {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    td {
+        padding: 4px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 5px;
+        margin: 0 15px;
+    }
+
+    .order-container {
+        flex-direction: column;
+    }
+
+    .block {
+        min-height: 200px;
+    }
+
+    .layer {
+        width: 120px;
+        height: 20px;
+        font-size: 10px;
+        line-height: 20px;
+    }
+
+    .visual-item {
+        width: 90px;
+        height: 50px;
+    }
+
+    header h1 {
+        font-size: 20px;
+    }
+
+    header img {
+        height: 30px;
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background: linear-gradient(to right, #2c3e50, #34495e);
+    color: white;
+    margin-top: 20px;
+}
+
+footer a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
