@@ -33,7 +33,7 @@ A fun and interactive web application for building custom burgers with a drag-an
 ## Project Structure
 
 ```
-Burger Mania/
+RBurger/
 ├── index.html          # Main burger builder page
 ├── order.html          # Order summary page
 ├── style.css           # Shared CSS styles
@@ -66,5 +66,4 @@ This project is open-source and available under the [MIT License](LICENSE).
 
 ## Author
 
-Created with ❤️ by [RenaldyNaufalTA](https://github.com/Renaldy). Enjoy building burgers! 🍔</content>
-<parameter name="filePath">c:\laragon\www\Burger Mania\README.md
+Created with ❤️ by [RenaldyNaufalTA](https://github.com/RenaldyNaufalTA). Enjoy building burgers! 🍔</content>

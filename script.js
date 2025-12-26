@@ -2,17 +2,31 @@
 let slideIdx = 0;
 const addons = ingredients.filter(i => i.type === 'addon'); // Bahan selain roti [cite: 92]
 let userBurger = []; // Stack bahan yang dipilih
+let lastClickTime = 0;
+let lastBurgerClickTime = 0;
+const doubleClickDelay = 300; // milliseconds
 
 function init() {
     renderSlide();
     renderBurger();
 }
 
+// Handle double-click for mobile compatibility
+function handleIngredientClick() {
+    const currentTime = new Date().getTime();
+    if (currentTime - lastClickTime < doubleClickDelay) {
+        addCurrentIngredient();
+        lastClickTime = 0; // Reset to prevent triple-click
+    } else {
+        lastClickTime = currentTime;
+    }
+}
+
 // Navigasi Single Slide [cite: 81, 95]
 function renderSlide() {
     const item = addons[slideIdx];
     document.getElementById('current-ing').innerHTML = `
-            <div class="ing-display" data-id="${item.id}">
+            <div class="ing-display" data-id="${item.id}" onclick="handleIngredientClick()">
                 <div>${item.name} - $${item.price}</div>
                 <img src="${item.image}" alt="${item.name}" class="visual-item" />
             </div>
@@ -47,6 +61,28 @@ function dropToStack(ev) {
     renderBurger();
 }
 
+function addCurrentIngredient() {
+    const id = addons[slideIdx].id;
+    userBurger.push(id);
+    renderBurger();
+}
+
+// Handle double-click for burger ingredients to remove them
+function handleBurgerIngredientClick(index) {
+    const currentTime = new Date().getTime();
+    if (currentTime - lastBurgerClickTime < doubleClickDelay) {
+        removeBurgerIngredient(index);
+        lastBurgerClickTime = 0; // Reset to prevent triple-click
+    } else {
+        lastBurgerClickTime = currentTime;
+    }
+}
+
+function removeBurgerIngredient(index) {
+    userBurger.splice(index, 1);
+    renderBurger();
+}
+
 function dropToDelete(ev) {
     ev.preventDefault();
     const type = ev.dataTransfer.getData("type");
@@ -67,7 +103,7 @@ function renderBurger() {
 
     userBurger.forEach((ingId, idx) => {
         const item = ingredients.find(i => i.id === ingId);
-        html += `<img class="layer" draggable="true" ondragstart="dragMove(event, ${idx})" src="${item.image}" alt="${item.name}" style="object-fit: contain; width: 160px; height: 25px;" />`;
+        html += `<img class="layer" draggable="true" ondragstart="dragMove(event, ${idx})" onclick="handleBurgerIngredientClick(${idx})" src="${item.image}" alt="${item.name}" style="object-fit: contain; width: 160px; height: 25px;" />`;
     });
 
     html += `<img class="layer fixed" src="${top.image}" alt="${top.name}" style="object-fit: contain; width: 160px; height: 35px;" />`;

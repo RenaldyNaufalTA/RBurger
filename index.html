@@ -33,18 +33,21 @@
                 <div class="block-header">ORDER</div>
                 <p style="text-align: center; font-weight: bold; color: #555; margin: 10px 0;">Assemble Your Gourmet
                     Burger
-                    Below</p>
+                    Below <br> <small style="color: #999; font-size: smaller; font-weight: 100;"> Double click to reset specific ingredients</small></p>
+
                 <div id="burger-area" ondrop="dropToStack(event)" ondragover="allowDrop(event)"></div>
                 <button class="btn-order" onclick="submitOrder()">ORDER</button>
             </div>
 
-            <div class="block">
+            <div class="block" style="width: 100%;">
                 <div class="block-header">INGREDIENTS</div>
                 <div class="slide-container">
                     <button class="nav-btn" onclick="changeSlide(-1)">❮</button>
                     <div id="current-ing" draggable="true" ondragstart="dragNew(event)"></div>
                     <button class="nav-btn" onclick="changeSlide(1)">❯</button>
+                    
                 </div>
+                <small class="small-desc" >Tap 2x to order or drag</small>
             </div>
 
             <div class="block">
