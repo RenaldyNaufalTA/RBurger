@@ -1,4 +1,4 @@
-/* Shared Styles for Burger Mania */
+/* Shared Styles for RBurger */
 * {
     font-family: 'g Good Food', sans-serif;
     box-sizing: border-box;
@@ -11,6 +11,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
 }
 
 main {
@@ -68,12 +69,11 @@ header {
 
 .small-desc {
     position: absolute;
-    top: 70%;
+    top: 80%;
     right: 50%;
     transform: translate(50%, -50%);
     font-size: 12px;
-    color: #666;
-}
+    color: #666;}
 
 .nav-btn {
     cursor: pointer;
@@ -143,11 +143,13 @@ td {
 }
 
 .btn-reset {
-    float: right;
-    background: linear-gradient(to right, #3498db, #2980b9);
-    color: white;
-    border: none;
-    padding: 5px 10px;
+    position: absolute;
+    top: 6px;
+    right: 10px;
+    background: white;
+    color: #3498db;
+    border: #3498db 2px solid;
+    padding: 3px 10px 0px 10px;
     cursor: pointer;
     border-radius: 5px;
 }
@@ -157,7 +159,7 @@ td {
     background: linear-gradient(to right, #3498db, #2980b9);
     color: white;
     border: none;
-    padding: 10px;
+    padding: 5px 10px;
     margin-top: 10px;
     cursor: pointer;
     border-radius: 5px;
@@ -168,7 +170,7 @@ td {
 
 .drop-zone {
     border: 2px dashed #ccc;
-    height: 90%;
+    height: 85%;
     width: 100%;
     display: flex;
     align-items: center;
@@ -184,7 +186,8 @@ td {
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
-    min-height: 90%;
+    justify-content: center;
+    min-height: 80%;
     padding: 20px;
     border: 1px solid #eee;
     border-radius: 10px;
@@ -194,7 +197,7 @@ td {
     background: linear-gradient(to right, #3498db, #2980b9);
     color: white;
     border: none;
-    padding: 10px;
+    padding: 10px 10px 5px 10px;
     cursor: pointer;
     margin-top: 10px;
     border-radius: 5px;
@@ -214,7 +217,9 @@ td {
 }
 
 
-
+.mt-n2 {
+    margin-top: -0.5rem !important;
+}
 /* Responsive Design */
 @media (max-width: 768px) {
     #container-order {
@@ -241,7 +246,6 @@ td {
     .container {
         padding: 10px;
         gap: 10px;
-        margin: 0 15px;
         flex-direction: column;
 
     }
@@ -252,7 +256,7 @@ td {
 
     .small-desc {
         position: absolute;
-        top: 80%;
+        top: 70%;
         right: 50%;
         transform: translate(50%, -50%);
     }
@@ -268,7 +272,7 @@ td {
     }
 
     .drop-zone {
-        height: 80%;
+        height: 200px;
     }
 
     .block-header {
@@ -278,6 +282,7 @@ td {
 
     .slide-container {
         height: 100%;
+        margin-top: 0;
     }
 
     .visual-item {
@@ -288,7 +293,7 @@ td {
     #burger-area,
     .burger-display {
         padding: 15px;
-        min-height: 150px;
+        min-height: 200px;
     }
 
     .layer {
@@ -301,11 +306,14 @@ td {
     .nav-btn {
         font-size: 20px;
     }
-
-    .btn-reset,
+    .btn-reset{
+        position: absolute;
+    top: 2px;
+    right: 10px;
+    }
     .btn-order,
     .btn-back {
-        padding: 8px;
+        padding: 10px 10px 5px 10px;
         font-size: 14px;
     }
 
@@ -321,8 +329,8 @@ td {
 
 @media (max-width: 480px) {
     .container {
-        padding: 5px;
-        margin: 0 15px;
+        padding: 10px;
+        gap: 10px;
         flex-direction: column;
     }
 
